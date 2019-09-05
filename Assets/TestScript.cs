@@ -14,6 +14,7 @@ public class TestScript : MonoBehaviour
     {
         Debug.Log("Hello World!");
         Debug.Log("Edited from the Browser in Github");
+        Debug.Log("Testing");
     }
 
     // Update is called once per frame
