@@ -47,22 +47,22 @@ public class HoldScript : MonoBehaviour
                 timerIsGoing = true;
             }
 
-            if(touch.phase == TouchPhase.Moved) {
-                Vector2 pos = touch.position;
-                Debug.Log("Touch Position = " + touch.position);
+            // if(touch.phase == TouchPhase.Moved) {
+            //     Vector2 pos = touch.position;
+            //     Debug.Log("Touch Position = " + touch.position);
 
-                pos.x = (pos.x - width) / width;
-                pos.y = (pos.y - height) / height;
-                position = new Vector3(pos.x * 3f, pos.y * 3f, 0);
+            //     pos.x = (pos.x - width) / width;
+            //     pos.y = (pos.y - height) / height;
+            //     position = new Vector3(pos.x * 3f, pos.y * 3f, 0);
 
-                this.transform.position = position;
-            }
-            if(touch.phase == TouchPhase.Ended) {
-                rend.material.color = originalColor;
-                timerIsGoing = false;
-                timer = 0;
-                transform.localScale = Vector3.one;
-            }
+            //     this.transform.position = position;
+            // }
+            // if(touch.phase == TouchPhase.Ended) {
+            //     rend.material.color = originalColor;
+            //     timerIsGoing = false;
+            //     timer = 0;
+            //     transform.localScale = Vector3.one;
+            // }
         }
 
         if(Input.touchCount <= 1) {
