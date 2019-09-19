@@ -31,6 +31,7 @@ public class CannonController : MonoBehaviour
             this.transform.localScale += Vector3.one * Time.deltaTime * 0.5f;
             shotPowerText.text = "ShotPower = " + shotPower.ToString("0,0");
         }
+        #if UNITY_IOS
         if(Input.touchCount > 0) {
             Touch touch = Input.GetTouch(0);
 
@@ -42,6 +43,15 @@ public class CannonController : MonoBehaviour
                 
             }
         }
+        #endif
+
+        #if UNITY_EDITOR
+        if(Input.GetMouseButtonDown(0)) {
+            timerIsGoing = true;
+        }if(Input.GetMouseButtonUp(0)) {
+            if(timerIsGoing) Shoot();
+        }
+        #endif
     }
 
     void Shoot() {

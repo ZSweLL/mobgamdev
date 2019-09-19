@@ -88,7 +88,7 @@ public class TestScript : MonoBehaviour
             // reset everything!
             score = 0;
             this.transform.position = startPosition;
-            Application.LoadLevel(0);
+            Application.LoadLevel(1);
         }
     }
 
