@@ -17,4 +17,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/HoldingGame.unity
     guid: 4321548addceace44b9b51d6319e6dea
+  - enabled: 1
+    path: Assets/Accelerometer.unity
+    guid: 079d18c5d90ca45b89eeaa33ba41181a
   m_configObjects: {}
