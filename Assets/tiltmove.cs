@@ -10,6 +10,8 @@ public class tiltmove : MonoBehaviour
 
     Transform body;
 
+    Vector3 startPosition;
+
     void Start() {
         body = this.transform.GetChild(0);
     }
@@ -38,5 +40,15 @@ public class tiltmove : MonoBehaviour
         transform.Translate(Vector3.forward * speed * Time.deltaTime);
         transform.Translate(dir * speed);
         body.transform.Rotate(0,0,-dir.x * rotSpeed);
+    }
+
+    void OnTriggerEnter(Collider other) {
+         if(other.gameObject.CompareTag("Obstacle")) {
+            this.transform.position = startPosition;
+            Application.LoadLevel(4);
+        } else if (other.gameObject.CompareTag("Finish")) {
+            this.transform.position = startPosition;
+            Application.LoadLevel(4);
+        }
     }
 }
