@@ -9,4 +9,10 @@ public class MainMenuController : MonoBehaviour
    public void SwitchScene(int index = 0) {
        SceneManager.LoadScene(index); 
    }
+
+   public void EndGame () {
+       Debug.Log ("QUITTING!");
+       Application.Quit();
+   }
+
 }

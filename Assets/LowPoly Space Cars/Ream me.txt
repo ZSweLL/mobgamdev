@@ -1,0 +1,16 @@
+LowPoly Space Cars
+
+
+All models are available in .fbx format in "Models" folder
+
+Fbx "unwraped" models are using one texture named "all-in-one-colors" to reduce the size of project
+
+Fbx "colored" models are using color materials available in "separated color materials" folder.
+You can change colors or add your own colors and make cars with whatever colors that you want.
+
+All cars are available as prefabs in "prefabs" folder.
+
+In case of having any problem or question about the project contant digismile.co.nz@gmail.com
+
+Thank you.
+

@@ -2,11 +2,17 @@
 using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
+[RequireComponent(typeof(AudioSource))]
 
 public class TestScript : MonoBehaviour
 {
     float tapTimer = 0;
     public float doubleTapInterval = 0.2f;
+    AudioSource aud;
+    public AudioClip sound;
+    public AudioClip[] sounds;
+    
+    public bool alreadyPlayed = false;
     bool tapped = false;
     Rigidbody rb;
     public int jumpPower = 5;
@@ -28,6 +34,8 @@ public class TestScript : MonoBehaviour
         rb = this.GetComponent<Rigidbody>();
         scoreText = GameObject.Find("ScoreText").GetComponent<TextMeshPro>();
         startPosition = this.transform.position;
+
+        aud = this.GetComponent<AudioSource>();
     }
 
     // Update is called once per frame
@@ -57,7 +65,7 @@ public class TestScript : MonoBehaviour
     void FixedUpdate() {
         rb.AddRelativeForce(Vector3.right * forwardSpeed);
     }
-    void SingleTap() {
+   public void SingleTap() {
             Debug.Log("<color=red>Singly tap!</color>");
             Debug.Log("Timer = " + tapTimer);
             tapTimer = 0;
@@ -66,7 +74,7 @@ public class TestScript : MonoBehaviour
             rb.AddRelativeForce(Vector3.up * jumpPower, ForceMode.Impulse);
     }
 
-    void DoubleTap() {
+   public void DoubleTap() {
             Debug.Log("<color=blue>Double tap!</color>");
             Debug.Log("Timer = " + tapTimer);
             tapTimer = 0;
@@ -81,8 +89,9 @@ public class TestScript : MonoBehaviour
         if(other.gameObject.CompareTag("Ground")) {
             grounded = true;
         } else if(other.gameObject.CompareTag("Pickup")) {
-            score += 1000;
+            score += 10;
             scoreText.text = "Score = " + score;
+            aud.PlayOneShot(sounds[Random.Range(0, sounds.Length)]);
             Destroy(other.gameObject);
         } else if(other.gameObject.CompareTag("Finish")) {
             // reset everything!

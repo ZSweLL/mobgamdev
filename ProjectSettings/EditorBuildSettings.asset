@@ -11,13 +11,13 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scene0.unity
     guid: 05833d3f3c75e4859a8b594f0c10e658
-  - enabled: 1
-    path: Assets/Scene1.unity
-    guid: d6aebed06676540a1af4d68c2e014587
-  - enabled: 1
+  - enabled: 0
+    path: 
+    guid: 00000000000000000000000000000000
+  - enabled: 0
     path: Assets/HoldingGame.unity
     guid: 4321548addceace44b9b51d6319e6dea
-  - enabled: 1
-    path: Assets/Accelerometer.unity
-    guid: 079d18c5d90ca45b89eeaa33ba41181a
+  - enabled: 0
+    path: 
+    guid: 00000000000000000000000000000000
   m_configObjects: {}
